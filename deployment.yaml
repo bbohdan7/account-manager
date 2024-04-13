@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-manager
+  namespace: bogdan
+  labels:
+      app: account-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-manager
+  template:
+    metadata:
+      labels:
+        app: account-manager
+    spec:
+      containers:
+        - name: account-manager
+          image: registry:443/account-manager
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
