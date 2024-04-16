@@ -13,7 +13,9 @@ public class MainController {
     public ModelAndView welcome() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("welcome");
-        mv.getModel().put("welcome", "Hello, World!");
+        mv.getModel().put("welcome", "Hello to you");
+        mv.getModel().put("username", "Bohdan Zavialov");
+
         return mv;
     }
 
